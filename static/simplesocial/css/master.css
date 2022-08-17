@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  overflow: auto;
+  /* background-color: #DFF6FF; */
+  /* color:white;  */
+}
+
+.mycontent main {
+  text-align: center;
+}
+
+.mynav-brand, .mynav-menu {
+  font-weight: bold;
+  font-size:larger;
+}
+
+.mynav-menu, .current-page {
+  background-color: #47B5FF !important;
+}
+
+.group-card {
+  margin: 1em auto 1em auto;
+}
+
+.content {
+  padding: 0.5em;
+}
+
+/* .post-card, .group-listing, .page-nav, delete-post-form {
+  margin-top: 1em;
+} */
+
+#postForm label, #groupForm label, #loginForm label, #postEditForm label {
+  font-weight: bold;
+  padding-top: 1em;
+}
+
+#postForm button, #groupForm button , #loginForm button, #postEditForm button,
+#postEditForm a,
+.post-card, .group-listing, .page-nav, .delete-post-form, .mycontent
+{
+  margin-top: 1em;
+}
+
+.time-group {
+  font-size: small;
+  font-weight: 600;
+}
+
+a {
+  color: #06283D !important;
+}
+
+
+
+
