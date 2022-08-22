@@ -9,12 +9,14 @@ body {
   text-align: center;
 }
 
-.mynav-brand, .mynav-menu {
+.mynav-brand,
+.mynav-menu {
   font-weight: bold;
-  font-size:larger;
+  font-size: larger;
 }
 
-.mynav-menu, .current-page {
+.mynav-menu,
+.current-page {
   background-color: #47B5FF !important;
 }
 
@@ -30,15 +32,28 @@ body {
   margin-top: 1em;
 } */
 
-#postForm label, #groupForm label, #loginForm label, #postEditForm label {
+#loginForm {
+  width: 260px;
+}
+
+#postForm label,
+#groupForm label,
+#loginForm label,
+#postEditForm label {
   font-weight: bold;
   padding-top: 1em;
 }
 
-#postForm button, #groupForm button , #loginForm button, #postEditForm button,
+#postForm button,
+#groupForm button,
+#loginForm button,
+#postEditForm button,
 #postEditForm a,
-.post-card, .group-listing, .page-nav, .delete-post-form, .mycontent
-{
+.post-card,
+.grou1p-listing,
+.page-nav,
+.delete-post-form,
+.mycontent {
   margin-top: 1em;
 }
 
@@ -51,6 +66,36 @@ a {
   color: #06283D !important;
 }
 
+.starter-template,
+.comment-page {
+  padding-top: 3em;
+}
+
+.index-title {
+  font-weight: 900;
+}
+
+.comment {
+  margin: 20px 0px 20px 20px;
+}
+
+#id_comment {
+  width: 500px;
+}
 
 
+.fa-pen {
+  color: cadetblue;
+}
 
+.fa-trash-can {
+  color: #FFB562;
+}
+
+.fa {
+  padding-right: 1em;
+}
+
+.span-delete-comment {
+  cursor: pointer;
+}

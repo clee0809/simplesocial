@@ -6,7 +6,7 @@
 <div class="posts">
 	{% include "posts/_post.html" with post=object hide_delete=True %}
 </div>
-
+{{ object.pk }}
 <form method="POST" class="delete-post-form">
 	{% csrf_token %}
 	<input type="submit" value="Confirm Delete" class="btn btn-danger btn-large">

@@ -4,16 +4,18 @@
 
 {% block post_content %}
 <h4>Edit Post</h4>
+{{object.pk}}
 <form method="POST" id="postEditForm" enctype="multipart/form-data">
 	{% csrf_token %}
 	{% bootstrap_form form %}
 	<!-- <input required name="images" type="file" multiple > -->
-    <p>
-	{% buttons %}
+	<p>
+		{% buttons %}
 		<button type="submit" class="btn btn-primary btn-large">Edit</button>
-    <a href="{% url 'posts:single' username=user.username pk=object.pk %}" class="btn btn-light btn-large">Cancel</a>
+		<a href="{% url 'posts:single' username=user.username pk=object.pk %}"
+			class="btn btn-light btn-large">Cancel</a>
 
-	{% endbuttons %}
-    </p>
+		{% endbuttons %}
+	</p>
 </form>
 {% endblock %}

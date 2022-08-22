@@ -57,83 +57,33 @@
 		</div> -->
 
 			<!-- comment -->
+			<!-- <form action="" method="post">
+				{{ form }}
+			</form>
 			<hr>
-			<div class="card-comment">
-				{% for comment in post.comments.all %}
-				<div>
-					<strong>{{ comment.author }}</strong>
-					{% if user.is_authenticated and comment.author == user %}
-					<p class="float-end">
-						<span><a href=""><i class="fa fa-solid fa-pen"></i></a></span>
-						<span id={{comment.id}} class="span-delete-comment" data-bs-toggle="modal"
-							data-bs-target="#deleteModal"><i class="fa fa-solid fa-trash-can"></i></span>
-					</p>
-					{% endif %}
-				</div>
-				{{ comment|linebreaks }}
 
-				{% endfor %}
-				<a href="{% url 'posts:add_comment' post_pk=post.pk %}" class="btn btn-outline-secondary btn-sm">+ New
-					Comment</a>
+			<p>Comments: {{ post.comments.count }}</p>
+			{{post.pk}}
+			{{user.username}}
+			<div data-tag="for"></div>
+			<a class="btn btn-outline-secondary btn-sm"
+				href="{% url 'posts:add_comment' username=user.username pk=post.pk %}">Add comment</a>
+
+			{% if post.comments %}
+			{% for comment in post.comments.all %}
+			<div class="comment">
+				<div class="date">{{ comment.created_date }}</div>
+				<strong>{{ comment.author }}</strong>
+				<p>{{ comment.text|linebreaks }}</p>
 			</div>
+			{% endfor %}
+			{% else %}
+			<div data-tag="empty">
 
+				<p>No comments here yet :(</p>
 
-			<!-- Modal -->
-			<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-				aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" id="exampleModalLabel">Delete Confirmation</h5>
-							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-						</div>
-						<div class="modal-body">
-							This task will be deleted.
-						</div>
-						<div class="modal-footer" id="link">
-							<a id='delete-this'>
-								<!-- <form id='delete-this' method="post" action=""> -->
-								{% csrf_token %}
-								<button type="button" class="btn btn-primary btn-sm"
-									data-bs-dismiss="modal">Delete</button>
-								<!-- </form> -->
-							</a>
-							<!-- <a href=""> -->
-							<button type="button" class="btn btn-secondary btn-sm"
-								data-bs-dismiss="modal">Cancel</button>
-							<!-- </a> -->
-						</div>
-					</div>
-				</div>
 			</div>
-
-
-			<!-- modal -->
-			<script>
-				// delete task
-				// $(document).ready(function () {
-				// 	$(".span-delete-comment").click(function () {
-				// 		$("#link").html(
-				// 			"<a href='https://www.geeksforgeeks.org/'>link</a>");
-				// 	});
-				// });
-
-
-				$('.span-delete-comment').click(function () {
-					console.log($('#delete-this').attr('href'))
-					$('#delete-this').attr("href", "comment/delete/" + this.id)
-				});
-
-				// $('span').click(function () {
-				// 	$('#delete-this').attr("action", "/posts/comment/delete/" + this.id)
-				// });
-
-				// display popover
-				var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-				var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-					return new bootstrap.Popover(popoverTriggerEl)
-				})
-			</script>
+			{% endif %} -->
 			<!-- comment -->
 
 		</div>

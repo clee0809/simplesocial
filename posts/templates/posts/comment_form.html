@@ -1,0 +1,23 @@
+{% extends "posts/post_base.html" %}
+
+{% load bootstrap4 %}
+
+
+{% block post_content %}
+<div class="comment-page">
+    <h4>Create New Comment</h4>
+    <!-- {{ user }} -->
+    <!--  -->
+    <form method="POST" id="commentForm">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {# {% bootstrap_form form %} #}
+        <!-- <input required name="images" type="file" multiple > -->
+
+        {% buttons %}
+        <button type="submit" class="btn btn-primary btn-large">Add Comment</button>
+        {% endbuttons %}
+    </form>
+</div>
+<!--  -->
+{% endblock %}
