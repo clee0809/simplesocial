@@ -1,0 +1,18 @@
+Requirement already satisfied: django in c:\users\lee\anaconda3\envs\socialmediaenv\lib\site-packages (3.2.5)
+Collecting django
+  Downloading Django-4.1-py3-none-any.whl (8.1 MB)
+Requirement already satisfied: sqlparse>=0.2.2 in c:\users\lee\anaconda3\envs\socialmediaenv\lib\site-packages (from django) (0.4.1)
+Collecting asgiref<4,>=3.5.2
+  Using cached asgiref-3.5.2-py3-none-any.whl (22 kB)
+Collecting tzdata
+  Downloading tzdata-2022.2-py2.py3-none-any.whl (336 kB)
+Installing collected packages: tzdata, asgiref, django
+  Attempting uninstall: asgiref
+    Found existing installation: asgiref 3.4.1
+    Uninstalling asgiref-3.4.1:
+      Successfully uninstalled asgiref-3.4.1
+  Attempting uninstall: django
+    Found existing installation: Django 3.2.5
+    Uninstalling Django-3.2.5:
+      Successfully uninstalled Django-3.2.5
+Successfully installed asgiref-3.5.2 django-4.1 tzdata-2022.2
