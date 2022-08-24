@@ -23,7 +23,7 @@ MEDIA_DIR = BASE_DIR / 'posts/media'
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure--l08fkn*32b#m=&t_%309+)5l94_goo#9vmo9_gu)lto&+7wkm' # development
+# SECRET_KEY = '' # development
 
 # production
 SECRET_KEY = os.environ.get(
