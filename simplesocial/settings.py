@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -22,12 +23,20 @@ MEDIA_DIR = BASE_DIR / 'posts/media'
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure--l08fkn*32b#m=&t_%309+)5l94_goo#9vmo9_gu)lto&+7wkm'
+# SECRET_KEY = 'django-insecure--l08fkn*32b#m=&t_%309+)5l94_goo#9vmo9_gu)lto&+7wkm' # development
+
+# production
+SECRET_KEY = os.environ.get(
+    'DJANGO_SECRET_KEY', 'p5=o-fm3bfqqoatcfon2mqi5a6_5b!-1#q5c(&ty7ct^9twf$t')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+# ALLOWED_HOSTS = []
 
-ALLOWED_HOSTS = []
+# production
+DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -40,7 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
-    'bootstrap4', # > pip install django-bootstrap4
+    'bootstrap4',  # > pip install django-bootstrap4
     'accounts',
     'groups',
     'posts',
@@ -56,12 +65,17 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# production
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
+
 ROOT_URLCONF = 'simplesocial.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATE_DIR,],
+        'DIRS': [TEMPLATE_DIR, ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -128,8 +142,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 # print(STATICFILES_DIRS)
 
-LOGIN_REDIRECT_URL = 'posts:all' #'test' # test.html
-LOGOUT_REDIRECT_URL = 'thanks' # thanks.html
+LOGIN_REDIRECT_URL = 'posts:all'  # 'test' # test.html
+LOGOUT_REDIRECT_URL = 'thanks'  # thanks.html
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = MEDIA_DIR
