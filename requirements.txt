@@ -23,7 +23,7 @@ pytz==2022.1
 pyzmq==22.3.0
 setuptools==61.2.0
 soupsieve==2.3.2.post1
-sqlparse==0.4.1
+sqlparse>=0.4.1
 tornado==6.1
 traitlets==5.1.1
 typing_extensions==4.1.1
