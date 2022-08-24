@@ -1,0 +1,1 @@
+Simple social media project in Django
